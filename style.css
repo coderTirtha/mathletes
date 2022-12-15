@@ -99,6 +99,7 @@ body {
     justify-content: space-between;
     list-style: none;
     flex-direction: column;
+    padding: 1rem 2rem;
 }
 
 .nav-menu .menu-branding {
