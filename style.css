@@ -10,10 +10,42 @@
     --bg: #3e3e3ea5;
 }
 
-body {
-    font-size: 90%;
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+*::selection {
+    background-color: var(--heading1);
+    color: #333;
+}
+
+html {
+    font-size: 90%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar {
+    width: 0.6rem;
+}
+
+html::-webkit-scrollbar-track {
+    background: #333;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--heading2);
+    border-radius: 50px;
+}
+
+body {
     font-family: 'Atma', cursive;
     overflow-x: hidden;
     color: var(--text-color);
@@ -46,7 +78,6 @@ body {
 }
 
 .menu-container .minimize-menu i {
-    position: fixed;
     color: var(--white-text);
     margin-left: 29vw;
     margin-top: .25rem;
@@ -84,7 +115,7 @@ body {
 
 .nav-menu .menu-branding .description {
     text-align: center;
-    line-height: 1px;
+    line-height: 20px;
     color: var(--white-text);
 }
 
@@ -149,4 +180,129 @@ body {
 .nav-icon:hover {
     background-color: var(--text-color);
     color: var(--white-text);
+}
+
+.header {
+    background: linear-gradient(#000000e7, #0000009a), url(images/web-banner.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 94vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.header .banner-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .banner-image img {
+    max-width: 300px;
+    border-radius: 50%;
+}
+
+.header .banner-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-text);
+    font-size: 1.5em;
+    padding-right: 1.3rem;
+}
+
+.header .banner-text h3 {
+    color: var(--heading4);
+}
+
+.header .banner-text a {
+    text-decoration: none;
+    /* margin-right: 10rem; */
+}
+
+.header .banner-text .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--heading2);
+    color: var(--white-text);
+    margin-top: 1.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+    border-radius: .3rem;
+    transition: .2s linear;
+}
+
+.header .banner-text .btn:hover {
+    background-color: var(--white-text);
+    color: var(--heading2);
+}
+
+.header .banner-text .btn i {
+    margin-right: 10px;
+}
+
+.bubbles img {
+    width: 50px;
+    animation: bubble 4s linear infinite;
+    opacity: 0;
+}
+
+.bubbles {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom: -0.5rem;
+    z-index: 1;
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-80vh);
+        opacity: 0;
+    }
+}
+
+.bubbles img:nth-child(1) {
+    animation-delay: 2s;
+    width: 25px;
+}
+
+.bubbles img:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.bubbles img:nth-child(3) {
+    animation-delay: 1s;
+    width: 25px;
+}
+
+.bubbles img:nth-child(4) {
+    animation-delay: 3s;
+}
+
+.bubbles img:nth-child(5) {
+    animation-delay: 4.5s;
+}
+
+.bubbles img:nth-child(6) {
+    animation-delay: 6s;
+    width: 20px;
+}
+
+.bubbles img:nth-child(7) {
+    animation-delay: 3.5s;
+    width: 35px;
 }
